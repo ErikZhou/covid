@@ -5,6 +5,8 @@ import re
 from jinja2 import Environment, FileSystemLoader
 import requests
 from lxml import etree
+import urllib3
+urllib3.disable_warnings()
 
 headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36"}
 
@@ -146,3 +148,4 @@ if __name__ == "__main__":
         get_agg_addresses_from_url(args.urlagg)
     else:
         get_addresses()
+    print('Done')
